@@ -1,5 +1,5 @@
 //this is to enable multi vendo setup, set to true when multi vendo is supported
-var isMultiVendo = true;
+var isMultiVendo = false;
 
 // 0 = traditional (client choose a vendo) , 1 = auto select vendo base on interface name
 var multiVendoOption = 0;
