@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/toast.min.css">
+	<link rel="stylesheet" href="assets/css/core.css">
+	<link rel="stylesheet" href="assets/css/JuanFi.css">
+    <title>JuanLink - Status</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<script src="assets/js/config.js"></script>
+
+</head>
+<body id="loginBody">
+<center>
+     <img src="assets/MainPic.png" class="img-fluid banner-mekus" />
+<div class="container sdw">
+		<form action="$(link-logout)" name="logout" >
+			<input type="hidden" name="erase-cookie" value="true" />
+		</form>
+				
+                <div class="login">
+				<div class="scroll-left"><span id="slidingtext"></span></div>
+				<center class="sdw">
+						<span id="pauseRemainTime"></span>
+						<small class="status">Status: <span class="blinking1" id="connectionStatus" style="color: #4cd137">Paused</span></small>
+						<div style="color: #ababab;font-size:12px"><span>Voucher Code: <span><span>$(username)</span></div>
+				        <small style="font-size: 12px; color:#ababab;">IP: <span>$(ip)</span> | MAC: <span>$(mac)</span></small>
+						<div style="color: #ababab;font-size:12px">Expiration: <span id="expirationTime"></span></div>
+				</center>
+				<button type="button" id="connectBtn" onClick="resume(); return false" class="btn sdw btn-dark btn-block" style="margin-top: 20px; display: block; text-shadow: 0px 1px 3px #000;width:100%">RESUME TIME</button>
+					<div style="margin-bottom:-15px"></div>
+					<br>
+					<button type="button" id="promoRateBtn" onclick="promoBtnAction(); return false" class="btn sdw btn-dark" style="display: block; color: #fff; text-shadow: 0px 1px 2px #000;width:100%">PROMO RATES</button>
+				<div style="margin-bottom:-5px"></div>
+
+				<div class="modal fade" id="promoRatesModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+					  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+						<div class="modal-content">
+						  <div class="modal-header">
+							<h5 class="modal-title" id="exampleModalLabel">Promo Rates</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							  <span aria-hidden="true" style="color: #fff">&times;</span>
+							</button>
+						  </div>
+						  <div class="modal-body">
+							<center>	
+							<table class="table table-striped table-bordered table-sm sdw">
+											<tr  style="background-color:#323232;color:#fff">
+												<th>Amount</th>
+												<th>Time</th>
+												<th>Expired</th>
+											</tr>
+											<tbody id="ratesBody"></tbody>
+							</table>
+							<div id="totalTime"></div>							
+							</center>
+						  </div>
+						</div>
+					  </div>
+					</div>
+
+                </div>
+				
+				<div class="footer">
+					<span class="footers">
+					Powered by: <a id="cstfooter" href="#"></a> &copy; All rights reserved 2022<br>
+					</span>				
+				</div>
+				
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/popper.min.js"></script>
+			<script src="assets/js/bootstrap.min.js"></script>
+			<script src="assets/js/toast.min.js"></script>
+			<script src="assets/js/core.js"></script>
+			<script src="assets/js/eload.js"></script>
+
+			<script>
+				var loginError = "";
+				var mac = "$(mac)";
+				var logoutUrl = "$(link-logout)";
+				var remainingTimer = null;
+				var interfaceName = "$(interface-name)";
+		
+				$(document).ready(function(){
+					$("#expirationTime").html("Loading...");
+					setTimeout(function(){
+						fetchValidity(1);
+					}, 1000);
+				});
+			</script>
+					<script>
+					$(document).ready(function() {
+						document.getElementById("cstfooter").innerHTML = CstFooter;
+						document.getElementById("slidingtext").innerHTML = slidingText;		
+					});
+					</script>
+
+			
+			<div id="loaderDiv" class="spinner hidden">
+				<center>
+					<img src="assets/loading.svg" />
+				</center>
+			</div>
+</center>
+</div>
+</body>
+
+</html>

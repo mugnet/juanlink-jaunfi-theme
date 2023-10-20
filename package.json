@@ -1,0 +1,37 @@
+{
+  "name": "custom-hotspot-5-legend-template",
+  "version": "1.0.0",
+  "description": "Customized hotspot 5 legend template for mikrotik",
+  "main": "md5.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "node-sass -w sass/ -o css/"
+    
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jobferrera/Customized-Hotspot-5-Legend-Template.git"
+  },
+  "keywords": [
+    "mikrotik",
+    "hotspot",
+    "template",
+    "legend",
+    "hotspot",
+    "5",
+    "legend",
+    "hostpot",
+    "5",
+    "html",
+    "css"
+  ],
+  "author": "Job Ferrera",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jobferrera/Customized-Hotspot-5-Legend-Template/issues"
+  },
+  "homepage": "https://github.com/jobferrera/Customized-Hotspot-5-Legend-Template#readme",
+  "dependencies": {
+    "sass": "^1.63.4"
+  }
+}
